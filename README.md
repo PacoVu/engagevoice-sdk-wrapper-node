@@ -13,9 +13,9 @@ Engage Voice SDK Wrapper for Node is a utility class, which helps you easily int
 
 1. To install the latest version directly from this github repo:
 ```
-npm install git+https://github.com/pacovu/engagevoice_sdk_wrapper --save
+npm install git+https://github.com/pacovu/engagevoice-sdk-wrapper-node --save
 
-npm install engagevoice_sdk_wrapper --save
+npm install engagevoice-sdk-wrapper --save
 ```
 
 ----
@@ -35,9 +35,9 @@ RestClient(clientId="", clientSecret="", mode="Engage")
 
 *Example code:*
 ```
-const EngageVoice = require('./engagevoice/engagevoice_sdk_wrapper')
+const EngageVoice = require('engagevoice-sdk-wrapper')
 
-var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, process.env.RINGCENTRAL_CLIENT_SECRET)
+var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET)
 ```
 ----
 **Function login**

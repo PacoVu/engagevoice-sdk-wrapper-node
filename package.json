@@ -7,6 +7,10 @@
   "contributors": [
     "Paco Vu <paco.vu@gmail.com>"
   ],
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",

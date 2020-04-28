@@ -22,7 +22,7 @@ npm install engagevoice-sdk-wrapper --save
 ## API References
 **Constructor**
 ```
-RestClient(clientId="", clientSecret="", mode="Engage")
+RestClient(clientId, clientSecret)
 ```
 
 *Description:*
@@ -31,7 +31,6 @@ RestClient(clientId="", clientSecret="", mode="Engage")
 *Parameters:*
 * clientId: Set the `clientId` of a RingCentral app to enable login with RingCentral user credentials.
 * clientSecret: Set the `clientSecret` of a RingCentral app to enable login with RingCentral user credentials.
-* mode: Set the mode to login Engage Voice. For legacy server, use "Legacy".
 
 *Example code:*
 ```
@@ -49,7 +48,7 @@ var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SE
 *Parameters:*
 * username: username of a user in Legacy service or in RingCentral Office service.
 * password: password of a user in Legacy service or in RingCentral Office service.
-* extensionNumber: the extension number if `username` is a RingCentral company main number.
+* extensionNumber: an extension number of a user. To be used if the `username` is a RingCentral company main number.
 
 *Response:*
 
@@ -58,7 +57,7 @@ var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SE
 ```
 # Login with RingCentral Office user credentials.
 
-var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, process.env.RINGCENTRAL_CLIENT_SECRET)
+var ev = new EngageVoice.RestClient(RINGCENTRAL_CLIENT_ID, RINGCENTRAL_CLIENT_SECRET)
 ev.login(RC_USERNAME, RC_PASSWORD, RC_EXTENSION, function(err, response){
     if (err)
       console.log(err)
@@ -67,23 +66,10 @@ ev.login(RC_USERNAME, RC_PASSWORD, RC_EXTENSION, function(err, response){
     }
 })
 
-function list_account_agent_groups() {
-  var endpoint = 'admin/accounts/~/agentGroups'
-  ev.get(endpoint, null, function(err, response){
-      if (err)
-          console.log(err)
-      else {
-          var jsonObj = JSON.parse(response)
-          console.log(jsonObj)
-          console.log("===========")
-      }
-  })
-}
-
 # Login with Legacy user credentials
 
-var ev = new EngageVoice.RestClient("", "", "Legacy")
-ev.login(RC_USERNAME, RC_PASSWORD, "", function(err, response){
+var ev = new EngageVoice.RestClient()
+ev.login(LEGACY_USERNAME, LEGACY_PASSWORD, "", function(err, response){
     if (err)
       console.log(err)
     else{
@@ -102,8 +88,8 @@ get(endpoint, params, callback)
 
 *Parameters:*
 * endpoint: Engage Voice API endpoint.
-* params: a JSON object containing key/value pair parameters to be sent to an Engage Voice API, where the keys are the parameters of that API.
-* callback: a callback function
+* params: a JSON object containing key/value pair parameters to be sent to an Engage Voice API, where the keys are the query parameters of the API.
+* callback: if specified, response is returned to callback function.
 
 *Response:*
 API response in JSON object
@@ -133,8 +119,8 @@ post(endpoint, params, callback)
 
 *Parameters:*
 * endpoint: Engage Voice API
-* params: a JSON object containing key/value pair parameters to be sent to an Engage Voice API, where the keys are the parameters of that API.
-* callback: a callback function.
+* params: a JSON object containing key/value pair parameters to be sent to an Engage Voice API, where the keys are the body parameters of the API.
+* callback: if specified, response is returned to callback function.
 
 *Response:*
 API response in JSON object

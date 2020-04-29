@@ -1,6 +1,6 @@
 {
   "name": "engagevoice-sdk-wrapper",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Engage Voice Node JS client",
   "devDependencies": {},
   "author": "Paco Vu",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/PacoVu/engagevoice-sdk-wrapper-node.git"
   },
   "keywords": [
-    "contact center"
+    "RingCentral Contact Center"
   ],
   "bugs": {
     "url": "https://github.com/PacoVu/engagevoice-sdk-wrapper-node/issues"

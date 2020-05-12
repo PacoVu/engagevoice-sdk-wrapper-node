@@ -7,7 +7,7 @@ Engage Voice SDK Wrapper for Node is a utility class, which helps you easily int
 ----
 ## Add Engage Voice SDK Wrapper to a Node JS project
 1. Download the EngageVoice SDK Wrapper for Node JS.
-2. Unzip and copy the whole `engagevoice` folder to your project folder.
+2. Unzip and copy the whole `engagevoice-sdk-wrapper-node` folder to your project folder.
 
 *OR*
 

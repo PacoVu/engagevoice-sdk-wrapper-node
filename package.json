@@ -1,6 +1,6 @@
 {
   "name": "engagevoice-sdk-wrapper",
-  "version": "0.5.7",
+  "version": "0.5.9",
   "description": "Engage Voice Node JS client",
   "devDependencies": {},
   "author": "Paco Vu",
@@ -9,6 +9,9 @@
   ],
   "directories": {
     "lib": "lib"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
   },
   "main": "index.js",
   "license": "MIT",
